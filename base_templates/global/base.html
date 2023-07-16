@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  {% include 'global/partials/_head.html' %}
+</head>
+<body>
+  
+  <div class="blog-wrapper">
+    
+    {% if site_setup.mostrar_cabecalho %}
+      {% include 'global/partials/_header.html' %}
+    {% endif %}
+    
+    {% block content %}{% endblock content %}
+    
+    {% if site_setup.mostrar_paginacao %}
+      {% include 'global/partials/_pagination.html' %}
+    {% endif %}
+    
+    {% if site_setup.mostrar_rodape %}
+      {% include 'global/partials/_footer.html' %}
+    {% endif %}
+ 
+  </div>
+
+  <script src="{% static 'global/js/script.js' %}"></script>
+
+</body>
+</html>

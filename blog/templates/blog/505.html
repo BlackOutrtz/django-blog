@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Página não encontrada - Erro 505</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      color: #333;
+      text-align: center;
+      padding: 100px;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
+
+    a {
+      color: #333;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>Oops! Erro de porcessamento</h1>
+  <p>Lamentamos, mas a página que você está procurando não pode ser carregada no momento</p>
+  <p>Verifique se digitou corretamente o URL ou clique no botão abaixo para voltar à página inicial.</p>
+  <a href="{% url 'index' %}">Voltar à página inicial</a>
+</body>
+</html>

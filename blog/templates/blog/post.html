@@ -1,0 +1,72 @@
+{% extends 'global/base.html' %}
+
+{% block content %}
+
+<main class="main-content single-post section-wrapper">
+  <div class="single-post-content section-content-narrow">
+    <div class="single-post-gap section-gap">
+      
+      {% if post.is_published %}
+        {% if post.cover and post.cover_in_post_content %}
+          <div class="single-post-cover pb-base">
+            <center>
+              <img 
+                loading="lazy" 
+                src="{{ post.cover.url }}" 
+                alt="{{ post.title }}"
+              >
+            </center>
+          </div>
+        {% endif %}
+
+        <div class="separator"></div>
+
+        <h2 class="single-post-title pb-base center">
+          {{ post.title}}
+        </h2>
+
+        <div class="post-meta pb-base">
+          
+          <div class="post-meta-item">
+            <span class="post-meta-link">
+              <i class="fa-solid fa-calendar-days"></i>
+              <span>
+                {{ post.created_at | date:'d/m/Y' }}
+              </span>
+            </span>
+          </div>
+
+          {% if post.category %}
+            <div class="post-meta-item">
+              <i class="fa-solid fa-tag"></i>
+                <span>
+                  {{ post.category.name }}
+                </span>
+              </a>
+            </div>
+          {% endif %}
+        </div>
+
+        <h6 class="single-post-title pb-base center">
+          <p>
+            {{ post.excerpt }}
+          </p>
+        </h6>
+
+        <div class="separator"></div>
+
+        <div class="single-post-content">
+          {{ post.content | safe }}
+        </div>
+        <br>
+        <div class="separator"></div>
+      {% else %}
+        <center>
+          <h1>Nada encontrado!</h1>
+        </center>
+      {% endif %}
+    </div>
+  </div>
+</main>
+
+{% endblock content %}

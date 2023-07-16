@@ -1,0 +1,28 @@
+{% extends 'global/base.html' %}
+{% load static %}
+{% block content %}
+  <main class="main-content section-wrapper">
+    <div class="section-content-narrow">
+      <div class="section-gap">
+        {% for c in sobre %}
+          <h1>{{ c.title }}</h1>
+          <h7 class="postion_excerpt">
+            {{ c.excerpt | safe}}
+          </h7>
+          <div class="postition-insta">
+            <br><br><br><br><br><br>
+            <a target="_blanck" href="https://www.instagram.com/ghostgamer314/">
+              <img src="{% static 'global/instagram.png' %}" alt="instagram" width="20" height="20">
+            </a>
+          </div>
+          <br><br><br><br><br>
+          <div class="separator"></div>
+          <br><br><br>
+          <h6 class="center">{{ c.content | safe }}</h6>
+          <br>
+          <div class="separator"></div>
+        {% endfor %}
+      </div>
+    </div>
+  </main>
+{% endblock content %}
